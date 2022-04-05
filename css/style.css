@@ -82,7 +82,7 @@
 /* setting the position of image when hover */
 .box:hover {
   z-index: 1;
-  transform: rotate(90deg);
+  transform: rotate(90deg) scale(1.2, 1.2);
   transition: transform ease-in-out 500ms;
   position: relative;
   cursor: pointer;
@@ -267,7 +267,7 @@
     transform: initial;
   }
   .box:hover {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.5, 1.5);
   }
   .box:hover .text {
     transform: rotate(-90deg);
@@ -333,5 +333,8 @@
   .box9:hover .text {
     left: 3rem;
     top: -15rem;
+  }
+  .box9:hover{
+    top: 10rem;
   }
 }
