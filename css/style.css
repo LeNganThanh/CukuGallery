@@ -1,0 +1,337 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --text-color: rgb(13, 141, 141);
+}
+.big-container {
+  width: 33%;
+  height: 100vh;
+}
+.big-container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 255, 255, 0.356),
+    rgba(0, 255, 255, 0.656),
+    rgba(0, 255, 255)
+  );
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+}
+.big-container::after {
+  content: "";
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    antiquewhite,
+    rgba(250, 235, 215, 0.527),
+    rgba(250, 235, 215, 0.418)
+  );
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+/* setting the header */
+.big-container header {
+  width: 90vw;
+  margin: 2rem auto;
+  position: relative;
+  background-color: rgba(127, 255, 212, 0.678);
+  clip-path: polygon(0 0, 100% 0, 98.5% 100%, 0 100%);
+}
+.big-container header h1 {
+  font-size: clamp(2rem, 1.5rem + 2vw, 5rem);
+  text-align: center;
+  color: var(--text-color);
+}
+.container {
+  width: 330px;
+  height: 700px;
+  position: relative;
+  margin: 1rem 7rem;
+  z-index: 1;
+}
+.box {
+  width: 330px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  border-top: 3px solid cadetblue;
+}
+.box img {
+  width: 100%;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(240, 248, 255, 0.712);
+  opacity: 0;
+}
+/* setting the position of image when hover */
+.box:hover {
+  z-index: 1;
+  transform: rotate(90deg);
+  transition: transform ease-in-out 500ms;
+  position: relative;
+  cursor: pointer;
+}
+.box:hover .text {
+  position: absolute;
+  width: 75%;
+  top: 4rem;
+  left: 14rem;
+  padding: 0.2rem;
+  transform: rotate(-90deg);
+  opacity: 1;
+}
+.box1 {
+  top: 0;
+}
+.box2 {
+  top: 3rem;
+  left: -0.5rem;
+}
+.box3 {
+  top: 6rem;
+  left: -1rem;
+}
+.box4 {
+  top: 9rem;
+  left: -1.5rem;
+}
+.box5 {
+  top: 12rem;
+  left: -2rem;
+}
+.box6 {
+  top: 15rem;
+  left: -2.5rem;
+}
+.box7 {
+  top: 18rem;
+  left: -3rem;
+}
+.box8 {
+  top: 21rem;
+  left: -3.5rem;
+}
+.box9 {
+  top: 24rem;
+  left: -4rem;
+}
+.big-container footer p {
+  color: var(--text-color);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  padding: 1rem 3rem;
+  z-index: 2;
+}
+
+/* setting for tablet */
+@media screen and (min-width: 768px) {
+  .big-container .header {
+    width: 100px;
+    margin: 1rem auto;
+  }
+  .container {
+    width: 50%;
+    margin: 18rem auto;
+  }
+  .box img {
+    transform: rotate(90deg);
+  }
+  .box {
+    border: none;
+    top: 0;
+    left: 0;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  }
+
+  /* setting the hover */
+  .box:hover {
+    transform: scale(1.5, 1.5);
+  }
+  .box:hover .text {
+    transform: rotate(0deg);
+    width: 35%;
+    height: 120%;
+    background-color: rgba(240, 248, 255, 0.836);
+    top: -2.5rem;
+  }
+  .box1:hover .text {
+    left: 18.5rem;
+  }
+
+  .box2 {
+    left: 3rem;
+    top: -1rem;
+  }
+  .box2:hover .text {
+    left: 18.5rem;
+  }
+
+  .box3 {
+    left: 6rem;
+    top: -2rem;
+  }
+  .box3:hover .text {
+    left: 18.5rem;
+  }
+
+  .box4 {
+    left: 9rem;
+    top: -3rem;
+  }
+  .box4:hover .text {
+    left: 18.5rem;
+  }
+
+  .box5 {
+    left: 12rem;
+    top: -4rem;
+  }
+  .box5:hover .text {
+    left: 18.5rem;
+  }
+
+  .box6 {
+    left: 15rem;
+    top: -5rem;
+  }
+  .box6:hover .text {
+    left: -5rem;
+  }
+  .box7 {
+    left: 18rem;
+    top: -6rem;
+  }
+  .box7:hover .text {
+    left: -5rem;
+  }
+  .box8 {
+    left: 21rem;
+    top: -7rem;
+  }
+  .box8:hover .text {
+    left: -5rem;
+  }
+  .box9 {
+    left: 24rem;
+    top: -8rem;
+  }
+  .box9:hover .text {
+    left: -5rem;
+  }
+}
+/* setting for desktop */
+@media screen and (min-width: 992px) {
+  .big-container .header {
+    width: 100px;
+    margin: 1rem auto;
+  }
+  .container {
+    margin-top: 15rem;
+    margin-left: 20vw;
+  }
+  .box {
+    border: none;
+    top: 0;
+    left: 0;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  }
+
+  .box img {
+    transform: initial;
+  }
+  .box:hover {
+    transform: rotate(90deg);
+  }
+  .box:hover .text {
+    transform: rotate(-90deg);
+    right: 5rem;
+    top: -15rem;
+    width: 60%;
+    height: 120%;
+    font-size: 1.2rem;
+    background-color: rgba(236, 238, 240, 0.856);
+  }
+  .box1 {
+    left: 0rem;
+    top: 10rem;
+  }
+  .box2 {
+    left: 3rem;
+    top: 6rem;
+    transform: rotate(25deg);
+  }
+  .box3 {
+    left: 8rem;
+    top: 0rem;
+    transform: rotate(40deg);
+  }
+  .box4 {
+    left: 13rem;
+    top: -3.5rem;
+    transform: rotate(60deg);
+  }
+  .box5 {
+    left: 20rem;
+    top: -5.5rem;
+    transform: rotate(85deg);
+  }
+  .box6 {
+    left: 26rem;
+    top: -2.5rem;
+    transform: rotate(105deg);
+  }
+  .box7 {
+    left: 32rem;
+    top: 3rem;
+    transform: rotate(130deg);
+  }
+  .box8 {
+    left: 36rem;
+    top: 9rem;
+    transform: rotate(155deg);
+  }
+  .box9 {
+    left: 39rem;
+    top: 14rem;
+    transform: rotate(180deg);
+  }
+  .box1:hover .text,
+  .box2:hover .text,
+  .box3:hover .text,
+  .box4:hover .text,
+  .box5:hover .text,
+  .box6:hover .text,
+  .box7:hover .text,
+  .box8:hover .text,
+  .box9:hover .text {
+    left: 3rem;
+    top: -15rem;
+  }
+}
